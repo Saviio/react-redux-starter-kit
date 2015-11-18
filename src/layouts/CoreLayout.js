@@ -1,5 +1,5 @@
-import React from 'react';
-import 'styles/core.scss';
+import React from 'react' 
+import 'styles/core.scss'
 
 export default class CoreLayout extends React.Component {
   static propTypes = {
@@ -13,6 +13,6 @@ export default class CoreLayout extends React.Component {
           {this.props.children}
         </div>
       </div>
-    );
+    )
   }
 }
