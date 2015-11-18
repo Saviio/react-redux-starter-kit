@@ -28,12 +28,9 @@ export class HomeView extends React.Component {
   render () {
     return (
       <div className='container text-center'>
-        <h1>React work flow</h1>
+        <h1>React Work Flow</h1>
         <h2>Sample Counter: {this.props.counter}</h2>
-        <button className='btn btn-default'
-                onClick={this.props.actions.increment}>
-          Increment
-        </button>
+        <button className='btn btn-default' onClick={this.props.actions.increment}> Increment </button>
       </div>
     );
   }

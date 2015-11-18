@@ -1,22 +1,9 @@
-import React        from 'react'
-import ReactDOM     from 'react-dom'
-import { Provider } from 'react-redux'
-import DevTools     from 'containers/DevToolsWindow'
+import React              from 'react'
+import { createDevTools } from 'redux-devtools'
+import LogMonitor         from 'redux-devtools-log-monitor'
 
-export function createConstants (...constants) {
-    return constants.reduce((acc, constant) => {
-        acc[constant] = constant
-        return acc
-    }, {})
-}
 
-export function createReducer (initialState, reducerMap) {
-    return (state = initialState, action) => {
-        const reducer = reducerMap[action.type]
-
-        return reducer ? reducer(state, action.payload) : state
-    }
-}
+const DevTool=createDevTools(<LogMonitor />)
 
 export function createDevToolsWindow (store) {
     const win = window.open(
@@ -35,11 +22,12 @@ export function createDevToolsWindow (store) {
         win.document.write('<div id="react-devtools-root"></div>')
         win.document.body.style.margin = '0'
 
-        ReactDOM.render(
+        var node=(
             <Provider store={store}>
                 <DevTools />
             </Provider>
-            , win.document.getElementById('react-devtools-root')
         )
+
+        ReactDOM.render(node, win.document.getElementById('react-devtools-root'))
     }, 10)
 }

@@ -3,10 +3,10 @@ import thunk                from 'redux-thunk'
 import routes               from '../routes'
 import {reduxReactRouter} from 'redux-router'
 import createHistory        from 'history/lib/createBrowserHistory'
-import DevTools             from 'containers/DevTools'
+import DevTools             from '../DevTools/DevTools'
 import {applyMiddleware,compose,createStore} from 'redux'
 
-export default function configureStore (initialState, debug = false) {
+export default function configureStore (initialState, debug=false) {
     let createStoreWithMiddleware
 
     const middleware = applyMiddleware(thunk)
@@ -31,10 +31,9 @@ export default function configureStore (initialState, debug = false) {
     if (module.hot) {
         module.hot.accept('../reducers', () => {
           const nextRootReducer = require('../reducers/index')
-
           store.replaceReducer(nextRootReducer)
         })
     }
-    
+
     return store
 }

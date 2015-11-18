@@ -62,8 +62,8 @@ Getting Started
 Just clone the repo and install the necessary node modules:
 
 ```shell
-$ git clone https://github.com/davezuko/react-redux-starter-kit.git ReduxStarterApp
-$ cd ReduxStarterApp
+$ git clone git@github.com:Saviio/react-redux-starter-kit.git React-${Project}-App
+$ cd ${Project}
 $ npm install                   # Install Node modules listed in ./package.json (may take a while the first time)
 $ npm start                     # Compile and launch
 ```

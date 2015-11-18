@@ -1,4 +1,4 @@
-import { createConstants } from '../utils'
+import {createConstants} from '../reduxUtils'
 
 export default createConstants(
     'COUNTER_INCREMENT'
